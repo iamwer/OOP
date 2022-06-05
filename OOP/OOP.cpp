@@ -5,11 +5,20 @@ using namespace std;
 
 class Channel
 {	
-private:
-public:
 	int m_subs;
 	string m_name;
-	int dayExpance;
+	int m_dayExpance;
+
+public:
+	string getName() { return m_name;}
+	void setName(string name) { m_name = name; }
+
+	int getSubs() { return m_subs; }
+	void setSubs(int subs) { m_subs = subs; }
+
+	int getdayExpance() { return m_dayExpance; }
+	void setdayExpance(int dayExpance) { m_dayExpance = dayExpance; }
+
 
 	void show()
 	{
@@ -17,7 +26,7 @@ public:
 	}
 	int subsAfter(int days)
 	{
-		return m_subs + dayExpance * days;
+		return m_subs + m_dayExpance * days;
 	}
 
 };
@@ -29,19 +38,12 @@ public:
 int main()
 {
 	Channel iamwer;
-	iamwer.m_name = "Iamwer";
-	iamwer.m_subs = 1000;
-	iamwer.dayExpance = 50;
+	iamwer.setName("Iamwer resolution");
+	iamwer.setSubs(100000);
+	iamwer.setdayExpance(5555);
 	iamwer.show();
-	cout << iamwer.subsAfter(30) << endl;
+	cout << iamwer.subsAfter(260);
 
-
-	Channel iamwer1;
-	iamwer1.m_name = "Second variable";
-	iamwer1.m_subs = 500;
-	iamwer1.dayExpance = 30;
-	iamwer1.show();
-	cout << iamwer1.subsAfter(15);
 
 
 
